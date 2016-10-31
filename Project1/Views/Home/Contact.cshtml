@@ -1,0 +1,154 @@
+﻿@{
+    ViewBag.Title = "Contact";
+}
+<div class="degreeBox" style="background-color: mintcream; opacity: 0.8;">
+
+    <h2 id="contactViewbag">@ViewBag.Message</h2>
+
+</div>
+    <div class="container">
+    <div class="row">
+        <div class="col-md-8">
+            <table class="table table-bordered table-striped">
+                <thead>
+                    <tr style="font-weight: bold; font-size: 24px; text-align: center;">
+                        <th>Department</th>
+                        <th>Contact Information</th>
+                    <tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td style="width: 250px; background-color: whitesmoke; font-weight: bold; font-size: 20px; text-align: center;">General</td>
+                        <td style="width: 350px; background-color: whitesmoke;">
+                            <address>
+                                <strong>BYU Department of Incoming Students for Information Systems </strong><br />
+                                Provo, UT 84601-5647<br />
+                                <abbr title="Phone">P:</abbr>
+                                801-657-4765<br />
+                                <a href="mailto:DepartmentofIsysFAQs@byu.edu">DepartmentofIsysFAQs@byu.edu</a><br />
+                            </address>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td style="width: 250px; font-weight: bold; font-size: 20px; text-align: center;">Bachelors Science Information Systems</td>
+                        <td>
+                            <address>
+                                <strong>Department of BSIS </strong><br />
+                                <abbr title="Phone">P:</abbr>
+                                801-657-3423<br />
+                                <a href="mailto:IsysBSIS@byu.edu">IsysBSIS@byu.edu</a><br />
+                            </address>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td style="width: 250px; background-color: whitesmoke; font-weight: bold; font-size: 20px; text-align: center;">Masters of Information Systems Management</td>
+                        <td>
+                            <address>
+                                <strong>Department of MSIM </strong><br />
+                                <abbr title="Phone">P:</abbr>
+                                801-657-3423<br />
+                                <a href="mailto:IsysMSIM@byu.edu">IsysMISM@byu.edu</a><br />
+                            </address>
+                        </td>
+                    </tr>
+                </tbody>
+           </table>
+
+         </div> 
+
+        <div class="col-md-4">
+            <img id="cougar" src="~/Content/Images/BYU.jpg" class="img-rounded" />
+        </div>
+
+      </div>
+
+        
+
+
+
+
+
+
+
+
+        
+    <hr />
+
+    <div class="row">
+        <div class="col-md-12">
+            <h2 id="contactBox">Contact Us</h2>
+        </div>
+        <form class="well span8" role="form">
+            <div class="row">
+                <div class="col-md-4">
+
+                    <div class="form-group">
+                        <label>First Name</label>
+                        <input class="form-control" placeholder="Your First Name" type="text">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Last Name</label>
+                        <input class="form-control" placeholder="Your Last Name" type="text">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Email Address</label>
+                        <input class="form-control" placeholder="Your email address" type="text">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Subject</label>
+                        <select class="form-control" id="subject" name="subject">
+                            <option selected value="na">
+                                Choose One:
+                            </option>
+
+                            <option value="service">
+                                Tuition
+                            </option>
+
+                            <option value="suggestions">
+                                Admissions
+                            </option>
+
+                            <option value="product">
+                                General Questions
+                            </option>
+                        </select>
+                    </div>
+
+
+
+                </div>
+
+                <div class="col-md-8">
+                    <label>Message</label>
+                    <textarea class="form-control" rows="10"></textarea>
+
+                    <button class="btn btn-primary pull-right voffset3" type="submit">Submit</button>
+                </div>
+
+
+            </div>
+        </form>
+    </div>
+
+</div>
+
+<hr />
+
+<div class="container-fluid">
+    <script src='https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyBaCjSg2FRMWUdxdfowJ6ieEYWnl7aKWLc'></script><div style='overflow:hidden;height:549px;width:1156px;'><div id='gmap_canvas' style='height:549px;width:1156px;'></div>
+    <style>
+        #gmap_canvas img {
+            max-width: none !important;
+            background: none !important;
+        }
+    </style></div><a href='http://maps-generator.com/'>Maps Generator</a>
+    <script type='text/javascript'>function init_map() { var myOptions = { zoom: 13, center: new google.maps.LatLng(40.2504348, -111.65250229999998), mapTypeId: google.maps.MapTypeId.ROADMAP }; map = new google.maps.Map(document.getElementById('gmap_canvas'), myOptions); marker = new google.maps.Marker({ map: map, position: new google.maps.LatLng(40.2504348, -111.65250229999998) }); infowindow = new google.maps.InfoWindow({ content: '<strong>Tanner Business Building</strong><br>N. Eldon Tanner Building, Campus Dr<br>84604 Provo<br>' }); google.maps.event.addListener(marker, 'click', function () { infowindow.open(map, marker); }); infowindow.open(map, marker); } google.maps.event.addDomListener(window, 'load', init_map);</script>
+</div>
+
+

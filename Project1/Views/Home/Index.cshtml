@@ -1,0 +1,75 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <div class="row">
+        <div class="callout-block text-center fade-in-b">
+            <h1>Brigham Young Univesity <b>Information Systems</b> </h1>
+            <!--<a href="@Url.Action("Flute", "Home")"><img id="byuIndex" src="~/Content/Images/BYU_Athletic_Logo.svg.png" /></a>-->
+            <a href="https://marriottschool.byu.edu/bsis/"><img id="byuIndex" src="~/Content/Images/BYU_Athletic_Logo.svg.png" /></a>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-sm-6 col-md-4">
+        <div class="thumbnail">
+            <img src="~/Content/Images/campus.jpg">
+            <div class="caption">
+                <p><a href="@Url.Action("About", "Home")"<h3>Why Chose BYU?</h3></a></p>
+                <p>
+                    Brigham Young Unviersity's mission statement is "to assist individuals in their quest for perfection and eternal life."
+                    Today, BYU is widely recognized for its deep commitments to inspired religious values and rigorous intellectual learning.
+                </p>
+                <p>A BYU education should be:</p>
+                <ul>
+                    <li>Spiritually Strengthening</li>
+                    <li>Intellectually Enlarging</li>
+                    <li>Character Building</li>
+                    <li>Leading to Lifelong Learning and Service</li>
+                </ul>
+                <a href="@Url.Action("About", "Home")"> <class ="btn btn-primary" role="button">About</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-sm-6 col-md-4">
+        <div class="thumbnail">
+            <img src="~/Content/Images/informationsystems.jpeg">
+            <div class="caption">
+                <h3>More on Information Systems</h3>
+                <p>
+                    Information Systems Professionals have a multitude of job opportunities and can work in almost any industry. 
+                    On average, graduates of the Information Systems Program receive the highest salary job offers of any program in the Marriott School of Business.
+                </p>
+                <p>BYU Information Systems Career Options:</p>
+                <ul>
+                    <li>System Analyst</li>
+                    <li>Database Administrator</li>
+                    <li>Computer Progammer</li>
+                    <li>Project Management</li>
+                    <li> Management Information Systems Director</li>
+                    <li>Network Adminstrator</li>
+                    <li>Computer Support Specialist</li>
+                </ul>
+                <p><a href="@Url.Action("BSIS", "Home")"> <class ="btn btn-primary" role="button">BSIS Degree</a></p>
+                <p><a href="@Url.Action("MISM", "Home")"> <span><class ="btn btn-primary" role="button">MISM Degree</span></a></p>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="col-sm-6 col-md-4">
+        <div class="thumbnail">
+            <img src="~/Content/Images/icons.jpg">
+            <div class="caption">
+                <h3>Contact Us</h3>
+                <p>
+                    We have a faculty, advisement, and recruiting team dedicated to serving our students. Feel free to contact us with any additional questions you have.
+                </p>
+                <p><a href="@Url.Action("Contact", "Home")"> <class="btn btn-primary" role="button">Contact Us</a></p>
+            </div>
+        </div>
+    </div>
+</div>

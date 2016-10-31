@@ -1,0 +1,139 @@
+﻿body {
+    padding-top: 100px;
+    padding-bottom: 20px;
+    background-color: mintcream;
+}
+
+.nav {
+    font-size: 2em !important;
+    word-spacing: 5px;
+}
+
+.navigation {
+    font-size: 1.2em !important;
+    word-spacing: 5px;
+}
+
+.navbar-toggle .icon-bar {
+    border: 2px solid white;
+}
+
+
+#Header {
+    font-size: 1.2em !important;
+    word-spacing: 5px;
+}
+
+/*Index Page*/
+.callout-block {
+	background-color: #F5F3F4;
+	border-left: 5px solid #a94545;
+	border-right: 5px solid #a94545;
+	padding: 15px;
+}
+
+.callout-block h1,
+.callout-block h2,
+.callout-block h3,
+.callout-block h4 {
+	font-weight: 300;
+	line-height: 1.4;
+}
+
+.jumbotron {
+    background-color: #09314f ;
+}
+
+#byuIndex {
+    align-content: center;
+    width: 250px;
+    height: auto;
+}
+
+.navbar {
+    min-height: 100px;
+    background-color: #09314f !important;
+
+}
+
+nav a {
+    color: white;
+}
+
+#navImage {
+    width: 150px;
+    height: auto;
+    
+}
+
+
+/*About Us*/
+
+#aboutPanoramic {
+    width: 100% !important;
+    height: 150px;
+}
+
+#AboutUs {
+    padding-top: 25px;
+    padding-bottom: 25px;
+    text-align: center;
+}
+
+.row .col-md-8 {
+    padding-top: 30px;
+}
+
+/*Contact Us*/
+#cougar {
+    height: 450px !important;
+    margin-left: 50px !important;
+}
+
+#contactViewbag {
+    text-align: center !important;
+    font-weight: bold;
+}.table1 {
+
+ }
+
+
+
+/*BSIS*/
+.bs-example {
+    background-color: transparent;
+}
+
+.breadcrumb {
+    background-color: transparent;
+}
+
+/*MISM*/
+
+#anderson {
+    display: block;
+    width: 400px !important;
+    text-align: center !important;
+}
+
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+    text
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
