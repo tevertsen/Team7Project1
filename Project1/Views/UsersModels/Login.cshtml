@@ -1,7 +1,7 @@
 ﻿@using Project1.Models
 @model LoginViewModel
 @{
-    ViewBag.Title = "Log in";
+    ViewBag.Title = "Login";
 }
 
 <h2>@ViewBag.Title.</h2>
@@ -42,7 +42,7 @@
                     </div>
                 </div>
                 <p>
-                    @Html.ActionLink("Register as a new user", "Register")
+                    @Html.ActionLink("Register as a new user", "Register", "UsersModels")
                 </p>
                 @* Enable this once you have account confirmation enabled for password reset functionality
                     <p>

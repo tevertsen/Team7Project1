@@ -159,14 +159,20 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\DegreeQuestionsModelsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\UsersModelsController.cs" />
+    <Compile Include="DAL\FAQContext.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\DegreeQuestionsModels.cs" />
+    <Compile Include="Models\DegreesModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\UsersModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -204,7 +210,9 @@
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -225,7 +233,7 @@
     <Content Include="Views\Account\ExternalLoginFailure.cshtml" />
     <Content Include="Views\Account\ForgotPassword.cshtml" />
     <Content Include="Views\Account\ForgotPasswordConfirmation.cshtml" />
-    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Home\Login.cshtml" />
     <Content Include="Views\Account\Register.cshtml" />
     <Content Include="Views\Account\ResetPassword.cshtml" />
     <Content Include="Views\Account\ResetPasswordConfirmation.cshtml" />
@@ -241,6 +249,20 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Home\BSIS.cshtml" />
     <Content Include="Views\Home\MISM.cshtml" />
+    <Content Include="Views\UsersModels\Register.cshtml" />
+    <Content Include="Views\UsersModels\Delete.cshtml" />
+    <Content Include="Views\UsersModels\Details.cshtml" />
+    <Content Include="Views\UsersModels\Edit.cshtml" />
+    <Content Include="Views\UsersModels\Index.cshtml" />
+    <Content Include="Views\UsersModels\Login.cshtml" />
+    <Content Include="Views\DegreeQuestionsModels\Create.cshtml" />
+    <Content Include="Views\DegreeQuestionsModels\Delete.cshtml" />
+    <Content Include="Views\DegreeQuestionsModels\Details.cshtml" />
+    <Content Include="Views\DegreeQuestionsModels\Edit.cshtml" />
+    <Content Include="Views\DegreeQuestionsModels\Index.cshtml" />
+    <Content Include="Views\Home\Degrees.cshtml" />
+    <Content Include="Views\DegreeQuestionsModels\CreateBSIS.cshtml" />
+    <Content Include="Views\DegreeQuestionsModels\CreateMISM.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

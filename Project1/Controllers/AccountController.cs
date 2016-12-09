@@ -9,12 +9,15 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using Project1.Models;
+using Project1.DAL;
 
 namespace Project1.Controllers
 {
     [Authorize]
     public class AccountController : Controller
     {
+        private FAQContext db = new FAQContext();
+
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
 

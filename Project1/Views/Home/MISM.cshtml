@@ -2,10 +2,12 @@
 @{
     ViewBag.Title = "MISM";
 }
+@model IEnumerable<Project1.Models.DegreeQuestionsModels>
+
 <div class="bs-example">
     <ul class="breadcrumb">
         <li><a href="@Url.Action("Index", "Home")">Home</a></li>
-        <li><a href="@Url.Action("Index", "Home")">Degrees</a></li>
+        <li><a href="@Url.Action("Degrees", "Home")">Degrees</a></li>
         <li class="active">MISM</li>
     </ul>
 </div>
@@ -39,313 +41,38 @@
 
     <div class="panel-group" id="accordion">
 
-        <!--- start of panel -->
+        @foreach (var item in Model.Where(i => i.degreeID.Equals(8)))
+        {
+            <div class="panel panel-default" id="panel_@Html.DisplayFor(modelItem => item.degreeQuestionID)">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-target="#collapse_@Html.DisplayFor(modelItem => item.degreeQuestionID)"
+                           href="#collapse_@Html.DisplayFor(modelItem => item.degreeQuestionID)" class="collapsed">
+                            @Html.HiddenFor(modelItem => item.degreeID)
+                            @Html.HiddenFor(modelItem => item.userID)
+                            @Html.DisplayFor(modelItem => item.question)
+                        </a>
+                    </h4>
 
-        <div class="panel panel-default" id="panel1">
-            <div class="panel-heading">
-                <h4 class="panel-title">
-                    <a data-toggle="collapse" data-target="#collapseOne"
-                       href="#collapseOne" class="collapsed">
-                        What are the pre-requisites for applying to the Information Systems School of Business Program?
-                    </a>
-                </h4>
+                </div>
 
-            </div>
-            <div id="collapseOne" class="panel-collapse collapse">
-                <div class="panel-body">
-                    <table style="left: 0.5in; position: relative">
-                        <tbody>
-                            <tr>
-                                <td style="width: 150px"><b><span style="text-decoration: underline">Course Title</span></b></td>
-                                <td style="width: 350px"><b><span style="text-decoration: underline">Description</span></b></td>
-                                <td style="width: 100px"><b><span style="text-decoration: underline">Credits</span></b></td>
-                            </tr>
-                            <tr>
-                                <td style="width: 150px; background-color: whitesmoke;">IS 110</td>
-                                <td style="width: 350px; background-color: whitesmoke;">Spreadsheet Skills</td>
-                                <td style="width: 100px; background-color: whitesmoke;">1.0</td>
-                            </tr>
-                            <tr>
-                                <td style="width: 150px">IS 201</td>
-                                <td style="width: 350px">Introduction to Management Information Systems</td>
-                                <td style="width: 100px">3.0</td>
-                            </tr>
-                            <tr>
-                                <td style="width: 150px; background-color: whitesmoke;">IS 303</td>
-                                <td style="width: 350px; background-color: whitesmoke;">Introduction to Computer Programming</td>
-                                <td style="width: 100px; background-color: whitesmoke;">3.0</td>
-                            </tr>
-                            <tr>
-                                <td style="width: 150px">ACC 200</td>
-                                <td style="width: 350px">Principles of Accounting</td>
-                                <td style="width: 100px">3.0</td>
-                            </tr>
-                            <tr>
-                                <td style="width: 150px; background-color: whitesmoke;">FIN 201</td>
-                                <td style="width: 350px; background-color: whitesmoke;">Financial Management</td>
-                                <td style="width: 100px; background-color: whitesmoke;">3.0</td>
-                            </tr>
-                            <tr>
-                                <td style="width: 150px">BUS M 241</td>
-                                <td style="width: 350px">Marketing Management</td>
-                                <td style="width: 100px">3.0</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                <div id="collapse_@Html.DisplayFor(modelItem => item.degreeQuestionID)" class="panel-collapse collapse">
+                    <div class="panel-body">
 
-                    <hr>
-
-                    <button class="btn btn-info btn-sm" data-toggle="collapse" data-target="#faq1">Make a Response</button>
-                    <div id="faq1" class="collapse">
-                        <hr>
-                        <form>
-                            <div class="form-group">
-                                <label for="exampleTextarea">Answer Question:</label>
-                                <textarea class="form-control" id="exampleTextarea" rows="3" placeholder="Put your answer here."></textarea>
-                            </div>
-
-                            <button type="submit" class="btn btn-primary">Submit Reply</button>
-                        </form>
+                        @Html.DisplayFor(modelItem => item.answer)<br /><br />
+                        @Html.ActionLink("Answer", "Edit", "DegreeQuestionsModels", new { id = item.degreeQuestionID }, null)
                     </div>
                 </div>
             </div>
-        </div>
-        <!--- start of panel -->
-        <!--- start of panel 2 -->
 
-        <div class="panel panel-default" id="panel1">
-            <div class="panel-heading">
-                <h4 class="panel-title">
-                    <a data-toggle="collapse" data-target="#collapseTwo"
-                       href="#collapseTwo" class="collapsed">
-                        How can I apply?
-                    </a>
-                </h4>
+        }
 
-            </div>
-            <div id="collapseTwo" class="panel-collapse collapse">
-                <div class="panel-body">
-
-                    <p>To apply, please complete the online application found at&nbsp;<u><a href="https://marriottschool.byu.edu/apply/bsis/">https://marriottschool.byu.edu/apply/bsis/</a>.</u></p>
-
-                    <hr>
-
-                    <button class="btn btn-info btn-sm" data-toggle="collapse" data-target="#faq2">Make a Response</button>
-                    <div id="faq2" class="collapse">
-                        <hr>
-                        <form>
-                            <div class="form-group">
-                                <label for="exampleTextarea">Answer Question:</label>
-                                <textarea class="form-control" id="exampleTextarea" rows="3" placeholder="Put your answer here."></textarea>
-                            </div>
-
-                            <button type="submit" class="btn btn-primary">Submit Reply</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <br /><br />
+        <a class="btn btn-primary btn-lg" href="@Url.Action("CreateMISM", "DegreeQuestionsModels")">Ask a Question</a>
 
 
-
-        <!--- start of panel 3 -->
-
-        <div class="panel panel-default" id="panel3">
-            <div class="panel-heading">
-                <h4 class="panel-title">
-                    <a data-toggle="collapse" data-target="#collapseThree"
-                       href="#collapseThree" class="collapsed">
-                        Other than the prerequisite classes, what else is required in order to apply to the program?
-                    </a>
-                </h4>
-
-            </div>
-            <div id="collapseThree" class="panel-collapse collapse">
-                <div class="panel-body">
-
-                    <p>Common themes of regrets the students within the BSIS wish they had studied more beforehand include the following: </p>
-                    <ul>
-                        <li>Practice with web development, bootstrap, and java script</li>
-                        <li>Understanding the materials taught in IS 201 and IS 303 </li>
-                        <li>Be adventurous, try and experiment and learn things on your own</li>
-                        <li>Become a master of "Googling"</li>
-                    </ul>
-
-                    <hr>
-
-                    <button class="btn btn-info btn-sm" data-toggle="collapse" data-target="#faq3">Make a Response</button>
-                    <div id="faq3" class="collapse">
-                        <hr>
-                        <form>
-                            <div class="form-group">
-                                <label for="exampleTextarea">Answer Question:</label>
-                                <textarea class="form-control" id="exampleTextarea" rows="3" placeholder="Put your answer here."></textarea>
-                            </div>
-
-                            <button type="submit" class="btn btn-primary">Submit Reply</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
-        <!--- start of panel 4 -->
-
-        <div class="panel panel-default" id="panel4">
-            <div class="panel-heading">
-                <h4 class="panel-title">
-                    <a data-toggle="collapse" data-target="#collapseFour"
-                       href="#collapseFour" class="collapsed">
-                        What is the average starting salary for students who graduate with a BSIS?
-                    </a>
-                </h4>
-
-            </div>
-            <div id="collapseFour" class="panel-collapse collapse">
-                <div class="panel-body">
-
-                    <p>THese are things to consider: </p>
-                    <ul>
-                        <li>Any repeated prerequisite courses will be discounted by .3 (e.g. A to A-) in the application process.</li>
-                        <li>If a prerequisite course is retaken, the most recent grade is the one considered during the application process. Thus, it is important that you improve your grade the second time you take the class.</li>
-                        <li>Premanagement courses may be repeated only once.</li>
-                    </ul>
-
-                    <hr>
-
-                    <button class="btn btn-info btn-sm" data-toggle="collapse" data-target="#faq4">Make a Response</button>
-                    <div id="faq4" class="collapse">
-                        <hr>
-                        <form>
-                            <div class="form-group">
-                                <label for="exampleTextarea">Answer Question:</label>
-                                <textarea class="form-control" id="exampleTextarea" rows="3" placeholder="Put your answer here."></textarea>
-                            </div>
-
-                            <button type="submit" class="btn btn-primary">Submit Reply</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
-        <!--- start of panel 5 -->
-
-        <div class="panel panel-default" id="panel5">
-            <div class="panel-heading">
-                <h4 class="panel-title">
-                    <a data-toggle="collapse" data-target="#collapseFive"
-                       href="#collapseFive" class="collapsed">
-                        What should I do if I can't get into the prerequisite class that I need to apply for the program?
-                    </a>
-                </h4>
-
-            </div>
-            <div id="collapseFive" class="panel-collapse collapse">
-                <div class="panel-body">
-
-                    <p>
-                        The commulative average salary of all IS professions after graduation is $68,400. However it is more appropriate to look at the average salary
-                        by job career. Below includes an example of potential careers and their average entry salaries.
-                    </p>
-
-                    <table>
-                        <tr>
-                            <th>Career</th>
-                            <th>Annual Salary</th>
-                        </tr>
-
-                        <tr>
-                            <td style="width: 350px; background-color: whitesmoke;">System Analyst:</td>
-                            <td style="width: 150px; background-color: whitesmoke;">$67,250</td>
-                        </tr>
-                        <tr>
-                            <td>Database Administrator</td>
-                            <td>$76,330</td>
-                        </tr>
-                        <tr>
-                            <td style="width: 350px; background-color: whitesmoke;">Computer Progammer</td>
-                            <td style="width: 150px; background-color: whitesmoke;">$77,110</td>
-                        </tr>
-                        <tr>
-                            <td>Project Management:</td>
-                            <td> $81,120</td>
-                        </tr>
-                        <tr>
-                            <td style="width: 350px; background-color: whitesmoke;">Management Information Systems Director:</td>
-                            <td style="width: 150px; background-color: whitesmoke;">$81,120</td>
-                        </tr>
-                        <tr>
-                            <td>Network Adminstrator:</td>
-                            <td>$71,990</td>
-                        </tr>
-                        <tr>
-                            <td style="width: 350px; background-color: whitesmoke;">Computer Support Specialist:</td>
-                            <td style="width: 150px; background-color: whitesmoke;">$70,870</td>
-                        </tr>
-
-                    </table>
-
-
-                    <hr>
-
-                    <button class="btn btn-info btn-sm" data-toggle="collapse" data-target="#faq5">Make a Response</button>
-                    <div id="faq5" class="collapse">
-                        <hr>
-                        <form>
-                            <div class="form-group">
-                                <label for="exampleTextarea">Answer Question:</label>
-                                <textarea class="form-control" id="exampleTextarea" rows="3" placeholder="Put your answer here."></textarea>
-                            </div>
-
-                            <button type="submit" class="btn btn-primary">Submit Reply</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
-        <!--- start of panel 6 -->
-
-        <div class="panel panel-default" id="panel6">
-            <div class="panel-heading">
-                <h4 class="panel-title">
-                    <a data-toggle="collapse" data-target="#collapseSix"
-                       href="#collapseSix" class="collapsed">
-                        Why should I chose a BSIS degree?
-                    </a>
-                </h4>
-
-            </div>
-            <div id="collapseSix" class="panel-collapse collapse">
-                <div class="panel-body">
-
-                    <p>
-                        Said best by an executive at Walmart, "[BYU's] Information System is a hidden gem." Information Systems is one of the few careers that allows you to learn technical skills in a business atmosphere. Information Systems
-                        is a great career for those who have a business spirit and like to use technology to improve business processes. The Information Systems program
-                        doesn't require it's students to have prior coding history, but all the experience before beginning the program will prove beneficial.
-                        In addition the IS program has received the following honors and awards for its ability.
-                    </p>
-
-                    <hr>
-
-                    <button class="btn btn-info btn-sm" data-toggle="collapse" data-target="#faq6">Make a Response</button>
-                    <div id="faq6" class="collapse">
-                        <hr>
-                        <form>
-                            <div class="form-group">
-                                <label for="exampleTextarea">Answer Question:</label>
-                                <textarea class="form-control" id="exampleTextarea" rows="3" placeholder="Put your answer here."></textarea>
-                            </div>
-
-                            <button type="submit" class="btn btn-primary">Submit Reply</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
 </div>
+
+
+   
